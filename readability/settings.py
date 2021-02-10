@@ -25,7 +25,7 @@ SECRET_KEY = '!gma7hb%z=u$xjs6o5xijxeu!p6d@evdhm+@70o2=)fu$g&psx'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['crimsonstarkane.pythonanywhere.com']
 
 
 # Application definition
@@ -119,3 +119,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATIC_ROOT = '/home/CrimsonStarkane/Readability-Web-App/static'
