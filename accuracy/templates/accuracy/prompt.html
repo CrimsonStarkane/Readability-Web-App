@@ -1,0 +1,67 @@
+{% extends "accuracy/layout.html" %}
+{% load static %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'accuracy/prompt.css' %}">
+{% endblock %}
+
+{% block title %}
+    {{ formula }}
+{% endblock %}
+
+{% block body %}
+    <div class="wrapper">
+        <a class="btn btn-dark" href="{% url 'index' %}">Home</a>
+
+        <div class="frontpage">
+            {% if confirmation %}
+                <div class="alert alert-success" role="alert">
+                    {{ confirmation }}
+                </div>
+            {% endif %}
+
+            <p class="title"><b>{{ formula }}</b></p>
+
+            <h1>Instructions</h1>
+            <p>In order for the results to be as accurate as possible, keep in mind these few pointers:</p>
+            <hr>
+            <ol>
+                <li>Please observe <b>proper sentence structure</b>, such as <b>no double spaces</b> in-between words and <b>proper punctuation</b>.</li>
+                <li>Add a <b>space after every sentence</b> to mark the beggining of a new sentence.</li>
+                <li>Correct <b>spelling</b> is highly important.</li>
+                <li>Avoid <b>text speak</b> such as BTW & LOL.</li>
+                <li>Your input must be at least <b>150</b> characters long and should not exceed <b>3,000</b> characters.</li>
+                <li>The text must be written in <b>English</b>.</li>
+            </ol>
+
+            <div class="alert alert-info" role="alert">
+                You can go over to this link (<a class="alert-link" href="{% url 'texts' formula %}">Text Samples</a>) if you do not want to manually input text. Just copy and paste the text you find to the text box below. You can also copy texts from other sources in the internet. Feel free include any literature you can find!
+            </div>
+    
+            {% if message %}
+                <div class="alert alert-danger" role="alert">
+                    {{ message }}
+                </div>
+            {% endif %}
+    
+            <form action="{% url 'prompt' formula %}" method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div class="d-grid gap-2 col-6 mx-auto">
+                    <input class="btn btn-primary" type="submit" value="Enter">
+                </div>
+            </form>
+    
+            {% if result %}
+                <hr>
+                <div class="result">
+                    {% if result <= 12 %}
+                        <p><b>Grade {{ result }}</b></p>
+                    {% else %}
+                        <p><b>{{ result }} Years of Education</b></p>
+                    {% endif %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

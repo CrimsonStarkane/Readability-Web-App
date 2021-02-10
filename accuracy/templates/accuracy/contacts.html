@@ -1,0 +1,42 @@
+{% extends "accuracy/layout.html" %}
+
+{% block title %}
+    Contacts Page
+{% endblock %}
+
+{% block body %}
+    <div class="wrapper">
+        <a class="btn btn-dark" href="{% url 'index' %}">Home</a>
+
+        <div class="frontpage">
+            <h1>Contact Details</h1>
+            <hr>
+
+            <p>You can reach out to either one of the researchers below:</p>
+
+            <ul class="list-group">
+                <li class="list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">Janriz Mathew Libres</h5>
+                        <small>Main Developer</small>
+                    </div>
+                    <p class="mb-1">Email: <b>leonmadrik11037@gmail.com</b></p>
+                    <p class="mb-1">Phone Number: <b>09052153867</b></p>
+                    <p class="mb-1">FB/Messenger: <a href="https://web.facebook.com/janrizlibs/">Link</a></p>
+                    <small>Status: Programming...</small>
+                </li>
+
+                <li class="list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">Jegger Allan Salvan</h5>
+                        <small>Research Head</small>
+                    </div>
+                    <p class="mb-1">Email: <b></b></p>
+                    <p class="mb-1">Phone Number: <b>09350160175</b></p>
+                    <p class="mb-1">FB/Messenger: <a href="https://web.facebook.com/jegger.salvan">Link</a></p>
+                    <small>Status: Synthesizing research paper...</small>
+                </li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}
