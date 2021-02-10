@@ -4,7 +4,7 @@ from django import forms
 from .formulas import *
 
 class CalculateForm(forms.Form):
-    text = forms.CharField(widget=forms.Textarea(attrs={"class": "form-control"}), label="", min_length=150, max_length=3000)
+    text = forms.CharField(widget=forms.Textarea(attrs={"class": "textbox"}), label="", min_length=150, max_length=3000)
 
 
 formulas = {

@@ -1,9 +1,4 @@
 {% extends 'accuracy/layout.html' %}
-{% load static %}
-
-{% block style %}
-    <link rel="stylesheet" href="{% static 'accuracy/texts.css' %}">
-{% endblock %}
 
 {% block title %}
     Text Samples
@@ -13,7 +8,7 @@
     <div class="wrapper">
         <a class="btn btn-dark" href="{% url 'prompt' formula %}">Back</a>
 
-        <div class="frontpage">
+        <div class="inner-wrapper">
             <h1>Text Samples</h1>
             <hr>
             <ul class="samples">
@@ -37,7 +32,7 @@
                 <li>Usually we walk around constantly believing ourselves. “I’m okay” we say. “I’m alright”. But sometimes the truth arrives on you and you can’t get it off. That’s when you realize that sometimes it isn’t even an answer – it’s a question. Even now, I wonder how much of my life is convinced.</li>
             </ul>
 
-            <div class="alert alert-warning" role="alert">
+            <div class="alert alert-warning add-info" role="alert">
                 <p>The samples above were taken from the following sources:</p>
                 <ul>
                     <li><a class="alert-link" href="https://cts.instructure.com/courses/172185/pages/word-count-examples">Word Count Examples</a></li>

@@ -1,9 +1,4 @@
 {% extends "accuracy/layout.html" %}
-{% load static %}
-
-{% block style %}
-    <link rel="stylesheet" href="{% static 'accuracy/style.css' %}">
-{% endblock %}
 
 {% block title %}
     Home
@@ -11,6 +6,7 @@
 
 {% block body %}
     <div class="wrapper">
+
         <div class="alert alert-primary" role="alert">
             <h1>Important! Please read</h1>
             <hr>
@@ -18,10 +14,8 @@
             <p>This webite application is created by the researchers in an attempt to assess these various readability formulas. All of the formulas listed below yield results that measure the grade level required to understand the text. For instance, a result of 12 would mean people who attained a Grade 12 education can easily understand or read the text. Any higher than that would require education at the College level or can be translated into the number of years of education required to read the text without difficulty. So a result of 14 would then mean that 14 years of education is required, and so on and so forth. Keep in mind that each formula may not yield the same result as the other.</p>
             <p>As a respondent, you can test these formulas out and see for yourself. It is recommended that you try each formula one by one in order for you to appropriately answer the survey that was given to you. If you find any bugs or errors, please contact the researchers through email, text, or messenger. You can find their contact details on the contacts page. Have fun!</p>
         </div>
-    </div>
 
-    <div class="wrapper">
-        <div class="frontpage">
+        <div class="inner-wrapper">
             <h1>Formulas</h1>
             <hr>
             <div class="list-group">
@@ -29,9 +23,10 @@
                     <a class="list-group-item list-group-item-action" href="{% url 'prompt' formula %}">{{ formula }}</a>
                 {% endfor %}
             </div>
-            <div class="alert alert-warning" role="alert">
+            <div class="alert alert-warning add-info" role="alert">
                 The basis for the algorithm of each formula is derived from <a class="alert-link" href="https://www.simoahava.com/analytics/calculate-readability-scores-for-content">this</a> source.
             </div>
         </div>
+
     </div>
 {% endblock %}

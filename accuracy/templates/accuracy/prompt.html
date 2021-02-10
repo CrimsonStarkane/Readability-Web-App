@@ -1,9 +1,4 @@
 {% extends "accuracy/layout.html" %}
-{% load static %}
-
-{% block style %}
-    <link rel="stylesheet" href="{% static 'accuracy/prompt.css' %}">
-{% endblock %}
 
 {% block title %}
     {{ formula }}
@@ -13,16 +8,16 @@
     <div class="wrapper">
         <a class="btn btn-dark" href="{% url 'index' %}">Home</a>
 
-        <div class="frontpage">
+        <div class="inner-wrapper">
             {% if confirmation %}
                 <div class="alert alert-success" role="alert">
                     {{ confirmation }}
                 </div>
             {% endif %}
 
-            <p class="title"><b>{{ formula }}</b></p>
+            <h1 class="title"><b>{{ formula }}</b></h1>
 
-            <h1>Instructions</h1>
+            <h2>Instructions</h2>
             <p>In order for the results to be as accurate as possible, keep in mind these few pointers:</p>
             <hr>
             <ol>
@@ -47,7 +42,7 @@
             <form action="{% url 'prompt' formula %}" method="POST">
                 {% csrf_token %}
                 {{ form.as_p }}
-                <div class="d-grid gap-2 col-6 mx-auto">
+                <div class="d-grid gap-2 col-6 mx-auto submit-btn">
                     <input class="btn btn-primary" type="submit" value="Enter">
                 </div>
             </form>
